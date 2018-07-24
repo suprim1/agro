@@ -6,24 +6,6 @@ use yii\base\BaseObject;
 
 /**
  * контролирует отклонение между текущей ценой и предыдущей
- *
- * ```php
- * $DiffPrice = new DiffPrice([
- *      'tolerance' => $tolerance,
- *      'currentPrice' => $currentPrice,
- *      'previousPrice' => $previousPrice,
- *      ]);
- * ```
- *
- * для получения результата вычисления необходимо вызвать:
- * ```php
- * $DiffPrice->amount;
- * ```
- *
- * для сравнения предыдущей цены с текущей:
- * ```php
- * $DiffPrice->diff();
- * ```
  */
 class DiffPrice extends BaseObject {
 
@@ -54,6 +36,14 @@ class DiffPrice extends BaseObject {
     /**
      * Конструктор класса
      *
+     * ```php
+     * $DiffPrice = new DiffPrice([
+     *      'tolerance' => $tolerance,
+     *      'currentPrice' => $currentPrice,
+     *      'previousPrice' => $previousPrice,
+     *      ]);
+     * ```
+     *
      */
     public function __construct(array $config) {
         parent::__construct($config);
@@ -70,6 +60,12 @@ class DiffPrice extends BaseObject {
      * Метод сравнения текущей цены с предыдущей
      * В случае, если результат будет больше, чем допустимое отклонение,
      * то ме тод должен вернутm false.
+     *
+     * для сравнения предыдущей цены с текущей:
+     * ```php
+     * $DiffPrice->diff();
+     * ```
+     *
      * @return bool
      */
     public function diff(): bool {
@@ -87,6 +83,10 @@ class DiffPrice extends BaseObject {
 
     /**
      * Получаем результат вычесления
+     *
+     * ```php
+     * $DiffPrice->amount;
+     * ```
      * @return float
      */
     public function getAmount(): float {
