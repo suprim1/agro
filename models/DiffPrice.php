@@ -19,6 +19,11 @@ use yii\base\BaseObject;
  * ```php
  * $DiffPrice->amount;
  * ```
+ *
+ * для сравнения предыдущей цены с текущей:
+ * ```php
+ * $DiffPrice->diff();
+ * ```
  */
 class DiffPrice extends BaseObject {
 
